@@ -68,6 +68,7 @@ def simulate_event(m):
   return p_wedding_infections, p_wedding_traces
 
 # Run the simulation 1000 times
+np.random.seed(123) # Random seed value set for reproducibility
 results = [simulate_event(m) for m in range(1000)]
 props_df = pd.DataFrame(results, columns=["Infections", "Traces"])
 
